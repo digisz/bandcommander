@@ -1,0 +1,29 @@
+body,html,div,h1,h2,h3,a,p,li,ul{
+  text-decoration: none;
+  list-style: none;
+padding:0;
+margin:0;
+font-family: sans-serif;
+}
+
+.global-wrapper{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:960px;
+  background: grey;
+
+}
+.singleShowSmall{
+  height:50px;
+  line-height: 50px;
+  padding-left:30px;
+  background: white;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+footer{
+  background: #c4f1a5;
+  height:100px;
+  line-height: 100px;
+  text-align: center;
+}
