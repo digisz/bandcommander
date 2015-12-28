@@ -1,4 +1,4 @@
 <div ng-controller="HomeController as homeCtrl">
   <li ng-repeat="event in homeCtrl.events" class="singleShowSmall" ng-click="showEvent(event._id)"><single-show-small></single-show-small></li>
+<button ng-click="showEvent('new')">Add new Show</button>
 </div>
-<button>Add new Show</button>
