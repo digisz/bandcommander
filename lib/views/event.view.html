@@ -1,3 +1,5 @@
-<div ng-controller="SingleEventController as eventCtrl">
-{{eventCtrl.event.name}},{{eventCtrl.event.date | date}}
-</div>
+<form novalidate ng-controller="SingleEventController as vm" ng-submit="vm.onSubmit()">
+          <formly-form model="vm.model" fields="vm.fields" form="vm.form">
+            <button type="submit" class="btn btn-primary submit-button">Submit</button>
+          </formly-form>
+        </form>
