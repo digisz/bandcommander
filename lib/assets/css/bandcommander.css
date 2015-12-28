@@ -11,7 +11,7 @@ font-family: sans-serif;
   margin-right:auto;
   max-width:960px;
   background: grey;
-
+  animation:all 1s both ease-in;
 }
 .singleShowSmall{
   height:50px;
@@ -26,4 +26,33 @@ footer{
   height:100px;
   line-height: 100px;
   text-align: center;
+}
+
+[ng-click]{
+  cursor: pointer;
+}
+
+.ng-leave 	{ z-index:9999;}
+.ng-enter 	{ z-index:8888;}
+
+.ng-enter{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+/*
+ * FadeIn animation
+*/
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
