@@ -1,1 +1,18 @@
-{{event.titel}},{{event.band}}{{event.date | date}}
+<div class="datum">
+    <div class="wochentag">{{event.date | date : 'EEEE'}}</div>
+    <div class="tag">{{event.date | date : 'dd'}}</div>
+    <div class="monat">{{event.date | date : 'MMMM'}}</div>
+  </div>
+  <div class="showInfo">
+    <h1 ng-show="event.type == 'concert'">🎤 {{event.titel}}</h1>
+    <h1 ng-show="event.type == 'tv'">📺 {{event.titel}}</h1>
+    <h1 ng-show="event.type == 'radio'">📻 {{event.titel}}</h1>
+    <h1 ng-show="event.type == 'other'">❓ {{event.titel}}</h1>
+    <h1 ng-show="event.type == 'probe'">🎯 {{event.titel}}</h1>
+
+    <div class="showAddInfo">
+    <div class="showAddInfoLine">{{event.location}}, {{event.place}}</div>
+     <div class="showAddInfoLine showAddInfoLineTime">{{event.showtime}}</div>
+     <div class="showAddInfoLine showAddInfoLineBand">{{event.band}}</div>
+    </div>
+  </div>

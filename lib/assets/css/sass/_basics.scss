@@ -1,0 +1,47 @@
+body,html,div,h1,h2,h3,a,p,li,ul{
+  text-decoration: none;
+  list-style: none;
+padding:0;
+margin:0;
+font-family: sans-serif;
+}
+
+footer{
+  background: rgb(110, 110, 110);
+  color:$white;
+  height:100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+header{
+  height:30px;
+  background-color: $master;
+  color:$white;
+  padding: 10px;
+  line-height: 30px;
+  font-size:24px;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: #000 1px 1px 3px;
+  position: relative;
+  z-index: 100;
+}
+
+.content{padding-top:10px;}
+
+h1{
+  font-size:24px;
+}
+
+[ng-click]{
+  cursor: pointer;
+}
+
+
+.global-wrapper{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:940px;
+  padding: 0;
+}

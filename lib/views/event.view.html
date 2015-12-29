@@ -1,4 +1,29 @@
 <form novalidate ng-controller="SingleEventController as vm" ng-submit="onSubmit()">
-<input type="text"></input>
+<!-- Titel -->
+<label for="titel">Titel</label>
+<input name="titel" type="text" ng-model="vm.data.titel"></input>
+
+<!-- Choose a band -->
+<label for="band">Band</label>
+<select ng-model="vm.data.band" name="band">
+  <option value="concert">Konzert</option>
+  <option value="radio">Radio</option>
+  <option value="tv">Fernsehen</option>
+  <option value="probe">Bandprobe</option>
+  <option value="other">Anderer</option>
+</select>
+
+<!-- Type -->
+<label for="type">Type</label>
+<select ng-model="vm.data.type" name="type">
+  <option value="concert">Konzert</option>
+  <option value="radio">Radio</option>
+  <option value="tv">Fernsehen</option>
+  <option value="probe">Bandprobe</option>
+  <option value="other">Anderer</option>
+</select>
+
+<!-- Save the Event -->
 <input type="submit"></input>
+
 </form>
