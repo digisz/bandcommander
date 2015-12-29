@@ -1,29 +1,103 @@
 <form novalidate ng-controller="SingleEventController as vm" ng-submit="onSubmit()">
 <!-- Titel -->
+<md-input-container>
 <label for="titel">Titel</label>
-<input name="titel" type="text" ng-model="vm.data.titel"></input>
-
+<input name="titel" placeholder="Titel" type="text" ng-model="vm.data.titel"></input>
+</md-input-container>
 <!-- Choose a band -->
-<label for="band">Band</label>
-<select ng-model="vm.data.band" name="band">
-  <option value="concert">Konzert</option>
-  <option value="radio">Radio</option>
-  <option value="tv">Fernsehen</option>
-  <option value="probe">Bandprobe</option>
-  <option value="other">Anderer</option>
-</select>
+<md-input-container>
+  <label>Band</label>
+  <md-select ng-model="vm.data.band">
+    <md-option value="Möchtegang">Möchtegang</md-option>
+    <md-option value="Fratelli-B">Fratelli-B</md-option>
+    <md-option value="C.mEE">C.mEE</md-option>
+    <md-option value="Phumaso & Smack">Phumaso & Smack</md-option>
+    <md-option value="Hedgehog">Hedgehog</md-option>
+  </md-select>
+</md-input-container>
 
 <!-- Type -->
-<label for="type">Type</label>
-<select ng-model="vm.data.type" name="type">
-  <option value="concert">Konzert</option>
-  <option value="radio">Radio</option>
-  <option value="tv">Fernsehen</option>
-  <option value="probe">Bandprobe</option>
-  <option value="other">Anderer</option>
-</select>
+<md-input-container>
+  <label>Event-Typ</label>
+  <md-select ng-model="vm.data.type">
+    <md-option value="concert">Konzert</md-option>
+    <md-option value="radio">Radio</md-option>
+    <md-option value="tv">Fernsehen</md-option>
+    <md-option value="probe">Bandprobe</md-option>
+    <md-option value="other">Anderer</md-option>
+  </md-select>
+</md-input-container>
+
+<!-- Datum -->
+<md-datepicker md-placeholder="Datum" ng-model="vm.data.date" md-min-date="Date.now()"></md-datepicker>
+<!-- Duration -->
+<md-input-container>
+<input name="duration" placeholder="Dauer" type="number" ng-model="vm.data.duration"></input>
+</md-input-container>
+<!-- Location -->
+<md-input-container>
+<input name="location" placeholder="Lokalität" type="text" ng-model="vm.data.location"></input>
+</md-input-container>
+<!-- Address -->
+<md-input-container>
+<input name="address" placeholder="Adresse" type="text" ng-model="vm.data.address"></input>
+</md-input-container>
+
+<!-- PLZ -->
+<md-input-container>
+<input name="address" placeholder="Postleitzahl" type="number" ng-model="vm.data.plz"></input>
+</md-input-container>
+
+<!-- Place -->
+<md-input-container>
+<input name="address" placeholder="Ort" type="text" ng-model="vm.data.place"></input>
+</md-input-container>
+
+<!-- Travelparty -->
+<label for="travelparty">Travelparty</label>
+<md-slider flex min="0" max="20" ng-model="vm.data.travelparty"></md-slider>
+<div flex="20" layout layout-align="center center">
+<input flex type="number" ng-model="vm.data.travelparty"></div>
+
+<!-- Food -->
+<md-input-container>
+<input name="food" placeholder="Essen" type="text" ng-model="vm.data.food"></input>
+</md-input-container>
+
+<!-- Age -->
+<md-input-container>
+<input name="age" placeholder="Alter" type="text" ng-model="vm.data.age"></input>
+</md-input-container>
+
+<!-- State -->
+<md-input-container>
+<input name="state" placeholder="Vertrags-Status" type="text" ng-model="vm.data.state"></input>
+</md-input-container>
+
+<!-- Showtime -->
+<!-- <md-input-container>
+<input name="showtime" placeholder="Showtime" type="text" ng-model="vm.data.times.showtime"></input>
+</md-input-container> -->
+
+<!-- Fee -->
+<md-input-container>
+<input name="fee" placeholder="Gage" type="number" ng-model="vm.data.fee"></input>
+</md-input-container>
+
+<!-- Facebook -->
+<md-input-container>
+<input name="facebookLink" placeholder="Facebook Link" type="url" ng-model="vm.data.links.facebook"></input>
+</md-input-container>
+
+<md-switch class="md-primary" ng-model="vm.data.published">
+    <span ng-show="vm.data.published">Veröffentlicht</span>
+    <span ng-hide="vm.data.published">Veröffentlichen?</span>
+  </md-switch>
+
+
 
 <!-- Save the Event -->
+<br>
 <input type="submit"></input>
 
 </form>
