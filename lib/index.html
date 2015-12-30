@@ -12,6 +12,7 @@
     <script src="app/directives.js"></script>
     <script src="app/routes.js"></script>
     <script src="app/event.factory.js"></script>
+    <script src="app/toolbar.factory.js"></script>
     <script src="app/page.factory.js"></script>
     <!-- MORE LIBRARIES FOR GOOGLE MATERIAL -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
@@ -24,7 +25,7 @@
   </head>
   <body>
     <div class="global-wrapper">
-      <toolbar></toolbar>
+      <toolbar ng-controller="Toolbar as toolbar"></toolbar>
       <div ng-view class="content"></div>
       <footer></footer>
     </div>
