@@ -1,78 +1,25 @@
 <form novalidate ng-controller="SingleEventController as vm" ng-submit="onSubmit()">
 <!-- Titel -->
-<md-input-container>
-<label for="titel">Titel</label>
-<input name="titel" placeholder="Titel" type="text" ng-model="vm.data.titel"></input>
-</md-input-container>
+<event-titel-edit></event-titel-edit>
 <!-- Choose a band -->
-<md-input-container>
-  <label>Band</label>
-  <md-select ng-model="vm.data.band">
-    <md-option value="Möchtegang">Möchtegang</md-option>
-    <md-option value="Fratelli-B">Fratelli-B</md-option>
-    <md-option value="C.mEE">C.mEE</md-option>
-    <md-option value="Phumaso & Smack">Phumaso & Smack</md-option>
-    <md-option value="Hedgehog">Hedgehog</md-option>
-  </md-select>
-</md-input-container>
-
+<event-band-edit></event-band-edit>
 <!-- Type -->
-<md-input-container>
-  <label>Event-Typ</label>
-  <md-select ng-model="vm.data.type">
-    <md-option value="concert">Konzert</md-option>
-    <md-option value="radio">Radio</md-option>
-    <md-option value="tv">Fernsehen</md-option>
-    <md-option value="probe">Bandprobe</md-option>
-    <md-option value="other">Anderer</md-option>
-  </md-select>
-</md-input-container>
-
+<event-type-edit></event-type-edit>
 <!-- Datum -->
-<md-datepicker md-placeholder="Datum" ng-model="vm.data.date" md-min-date="Date.now()"></md-datepicker>
+<event-datepicker-edit></event-datepicker-edit>
+<!-- Event Location -->
+<event-location-edit></event-location-edit>
 <!-- Duration -->
-<md-input-container>
-<input name="duration" placeholder="Dauer" type="number" ng-model="vm.data.duration"></input>
-</md-input-container>
-<!-- Location -->
-<md-input-container>
-<input name="location" placeholder="Lokalität" type="text" ng-model="vm.data.location"></input>
-</md-input-container>
-<!-- Address -->
-<md-input-container>
-<input name="address" placeholder="Adresse" type="text" ng-model="vm.data.address"></input>
-</md-input-container>
-
-<!-- PLZ -->
-<md-input-container>
-<input name="address" placeholder="Postleitzahl" type="number" ng-model="vm.data.plz"></input>
-</md-input-container>
-
-<!-- Place -->
-<md-input-container>
-<input name="address" placeholder="Ort" type="text" ng-model="vm.data.place"></input>
-</md-input-container>
-
+<event-duration-edit></event-duration-edit>
 <!-- Travelparty -->
-<label for="travelparty">Travelparty</label>
-<md-slider flex min="0" max="20" ng-model="vm.data.travelparty"></md-slider>
-<div flex="20" layout layout-align="center center">
-<input flex type="number" ng-model="vm.data.travelparty"></div>
-
+<event-travelparty-edit></event-travelparty-edit>
 <!-- Food -->
-<md-input-container>
-<input name="food" placeholder="Essen" type="text" ng-model="vm.data.food"></input>
-</md-input-container>
-
+<event-food-edit></event-food-edit>
 <!-- Age -->
-<md-input-container>
-<input name="age" placeholder="Alter" type="text" ng-model="vm.data.age"></input>
-</md-input-container>
+<event-age-edit></event-age-edit>
 
 <!-- State -->
-<md-input-container>
-<input name="state" placeholder="Vertrags-Status" type="text" ng-model="vm.data.state"></input>
-</md-input-container>
+<event-state-edit></event-state-edit>
 
 <!-- Showtime -->
 <!-- <md-input-container>
@@ -80,19 +27,12 @@
 </md-input-container> -->
 
 <!-- Fee -->
-<md-input-container>
-<input name="fee" placeholder="Gage" type="number" ng-model="vm.data.fee"></input>
-</md-input-container>
+<event-fee-edit></event-fee-edit>
+<!-- Links -->
+<event-links-edit></event-links-edit>
+<!-- Published -->
+<event-published-edit></event-published-edit>
 
-<!-- Facebook -->
-<md-input-container>
-<input name="facebookLink" placeholder="Facebook Link" type="url" ng-model="vm.data.links.facebook"></input>
-</md-input-container>
-
-<md-switch class="md-primary" ng-model="vm.data.published">
-    <span ng-show="vm.data.published">Veröffentlicht</span>
-    <span ng-hide="vm.data.published">Veröffentlichen?</span>
-  </md-switch>
 
 
 
