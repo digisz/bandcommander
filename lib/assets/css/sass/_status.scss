@@ -1,0 +1,18 @@
+.status-success{
+  height:100%;
+  padding:40px;
+  text-align: center;
+  background: $master;
+  color:$white;
+}
+.status-success h1,.status-failure h1{
+  font-size: 30px;
+}
+
+.status-failure{
+  background: $error;
+  color:$white;
+  height:100%;
+  padding:40px;
+  text-align: center;
+}
