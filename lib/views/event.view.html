@@ -1,5 +1,5 @@
 <div ng-controller="SingleEventController as vm">
-  <div class="section">
+  <div class="section" id="services">
     <button ng-show="isAuthorized(userRoles.admin)" ng-click="editEvent(vm.data._id)">Edit Show</button>
     <button ng-click="editEvent(vm.data._id)">Gästeliste</button>
     <button ng-click="">Veranst: {{vm.data.promoter}}</button>
