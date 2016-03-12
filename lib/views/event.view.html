@@ -10,6 +10,6 @@
   <event-state></event-state>
   <!-- Event Location -->
   <event-location></event-location>
-  <button ng-click="editEvent(vm.data._id)">Edit Show</button>
+  <button ng-show="isAuthorized(userRoles.admin)" ng-click="editEvent(vm.data._id)">Edit Show</button>
 
 </div>
