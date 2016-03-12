@@ -7,7 +7,7 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var rename = require('gulp-rename');
 
-gulp.task('default', ['connect', 'sass', 'services', 'watch'],
+gulp.task('default', ['connect', 'sass', 'services', 'controller', 'watch'],
   function () {});
 
 gulp.task('sass', function () {
@@ -26,7 +26,8 @@ gulp.task('watch', function () {
   gulp.watch('./lib/assets/css/sass/*.scss', ['sass']);
   gulp.watch('./lib/assets/css/sass/**/*.scss', ['sass']);
   gulp.watch(['./lib/**/*.html'], ['html']);
-  gulp.watch('./lib/**/*.js', ['services']);
+  gulp.watch('./lib/app/services/*.js', ['services']);
+  gulp.watch('./lib/app/**/*controller.js', ['controller']);
 });
 
 gulp.task('connect', function () {
@@ -45,6 +46,13 @@ gulp.task('html', function () {
 gulp.task('services', function () {
   return gulp.src('./lib/app/services/*.js')
     .pipe(concat('services.js'))
+    .pipe(gulp.dest('./lib/app/'))
+    .pipe(connect.reload());
+});
+
+gulp.task('controller', function () {
+  return gulp.src('./lib/app/**/*controller.js')
+    .pipe(concat('controller.js'))
     .pipe(gulp.dest('./lib/app/'))
     .pipe(connect.reload());
 });
