@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 gulp.task('default', ['connect', 'sass', 'services', 'controller', 'watch'],
   function () {});
@@ -46,6 +47,7 @@ gulp.task('html', function () {
 gulp.task('services', function () {
   return gulp.src('./lib/app/services/*.js')
     .pipe(concat('services.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('./lib/app/'))
     .pipe(connect.reload());
 });
@@ -53,6 +55,7 @@ gulp.task('services', function () {
 gulp.task('controller', function () {
   return gulp.src('./lib/app/**/*controller.js')
     .pipe(concat('controller.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('./lib/app/'))
     .pipe(connect.reload());
 });
