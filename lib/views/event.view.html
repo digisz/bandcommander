@@ -1,15 +1,15 @@
 <div ng-controller="SingleEventController as vm">
+<button ng-click="editEvent(vm.data._id)">Gästeliste</button>
+<button ng-click="">{{vm.data.promoter}}</button>
 <div class="section">
 {{vm.data.titel}}
 </div>
 <div class="section">
 {{vm.data.date}}
 </div>
-<div class="section">
-{{vm.data.promoter}}
-</div> 
   <event-state></event-state>
   <!-- Event Location -->
   <event-location></event-location>
+  <button ng-click="editEvent(vm.data._id)">Edit Show</button>
 
 </div>
