@@ -8,3 +8,20 @@ md-input-container{
   clear: both;
   width: 100%;
 }
+
+button{
+  min-width:20%;
+  height:40px;
+  margin:4px;
+  display: inline-block;
+  font-size: 1em;
+  background: none;
+  border:1px solid $acent;
+  border-radius: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+button:hover{
+  background: $acent;
+  color:$white;
+}

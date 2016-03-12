@@ -4,6 +4,7 @@ body,html,div,h1,h2,h3,a,p,li,ul{
 padding:0;
 margin:0;
 font-family: sans-serif;
+color:$text;
 }
 
 footer{
@@ -14,20 +15,6 @@ footer{
   text-align: center;
 }
 
-header{
-  height:30px;
-  background-color: $master;
-  color:$white;
-  padding: 10px;
-  line-height: 30px;
-  font-size:24px;
-  font-weight: 1200;
-  text-align: center;
-  box-shadow: #000 1px 1px 3px;
-  position: relative;
-  z-index: 100;
-}
-
 .content{padding-top:0px;}
 
 h1{
@@ -36,6 +23,11 @@ h1{
 }
 
 md-toolbar{color: $white}
+
+a:link{
+  text-decoration: underline;
+  color: $acent;
+}
 
 [ng-click]{
   cursor: pointer;
