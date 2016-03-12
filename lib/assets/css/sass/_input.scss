@@ -10,16 +10,18 @@ md-input-container{
 }
 
 button{
-  min-width:20%;
+  flex: none;
+  min-width: 30%;
   height:40px;
-  margin:4px;
+  margin:5px;
+  padding:10px;
   display: inline-block;
   font-size: 1em;
   background: none;
   border:1px solid $acent;
   border-radius: 4px;
   vertical-align: middle;
-  white-space: nowrap;
+  white-space:nowrap;
 }
 button:hover{
   background: $acent;

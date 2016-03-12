@@ -40,3 +40,10 @@ a:link{
   max-width:940px;
   padding: 0;
 }
+
+#services{
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: none !important;
+  justify-content: flex-start;
+}
