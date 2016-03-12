@@ -1,6 +1,6 @@
 <md-input-container>
   <label>Band</label>
-  <md-select ng-model="vm.data.band">
+  <md-select ng-model="vm.data.band" ng-change="updateMembers()">
     <md-option value="Möchtegang">Möchtegang</md-option>
     <md-option value="Fratelli-B">Fratelli-B</md-option>
     <md-option value="C.mEE">C.mEE</md-option>

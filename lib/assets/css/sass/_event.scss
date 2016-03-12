@@ -1,0 +1,13 @@
+.section{
+  border-bottom:1px solid $highlight;
+  margin-bottom: 4px;
+}
+
+.status{
+  font-weight: 800;
+  font-size: 0.8rem;
+  background: $master;
+  padding: 5px;
+  text-align: center;
+  color: $white;
+}
