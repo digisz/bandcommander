@@ -15,7 +15,10 @@ footer{
   text-align: center;
 }
 
-.content{padding-top:0px;}
+.content{
+  overflow: visible;
+  padding-top:48px;
+}
 
 h1{
   font-size:24px;
@@ -44,6 +47,7 @@ a:link{
   margin-right:auto;
   max-width:940px;
   padding: 0;
+  overflow:visible;
 }
 
 #services{

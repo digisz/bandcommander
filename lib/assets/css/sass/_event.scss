@@ -48,8 +48,18 @@
 
 #event-date{
   padding: 15px;
+  color: $text;
   font-weight: 800;
   font-size:1.3em;
   line-height: 1.4em;
   text-align: center;
+  background: url("../images/event_header_mobile.jpg");
+  background-size:cover;
+}
+
+#event-edit-save{
+  position: fixed;
+  top:0;
+  right:10px;
+  z-index:99999999;
 }
