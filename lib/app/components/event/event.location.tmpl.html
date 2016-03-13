@@ -1,15 +1,11 @@
 <div class="section">
-  <!-- Location -->
-<div class="section-icon section-part">
-  📍
-</div>
-  <a href="" ng-click="showme=!showme" ng-show="!showme" class="section-part">  {{vm.data.location}} {{vm.data.place}}</a>
-  <div class="section-part" ng-show="showme" ng-click="showme=!showme">
+<h2>Wo?</h2>
+<div class="section-icon section-part">📍</div>
+<a href="" ng-click="showme=!showme" ng-show="!showme" class="section-part">{{vm.data.location}} {{vm.data.place}}</a>
+<div class="section-part section-part-noflex" ng-show="showme" ng-click="showme=!showme">
     <b>{{vm.data.location}} {{vm.data.place}}</b><br />
      {{vm.data.address}}<br>
-     {{vm.data.plz}} {{vm.data.place}}<br />
-     <a href="http://maps.google.com/?q={{vm.data.location}}+{{vm.data.address}}+{{vm.data.plz}}+{{vm.data.place}}" target="_new">Google Maps</a>
-   </div>
-
-
+  {{vm.data.plz}} {{vm.data.place}}<br />
+  <a href="http://maps.google.com/?q={{vm.data.location}}+{{vm.data.address}}+{{vm.data.plz}}+{{vm.data.place}}" target="_new">Google Maps</a>
+</div>
 </div>

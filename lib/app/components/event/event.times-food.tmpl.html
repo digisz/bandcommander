@@ -1,0 +1,5 @@
+<div class="section-part section-icon">🍕</div>
+<div class="section-part section-time" ng-show="vm.data.times.food">{{ vm.data.times.food | date : 'HH:mm'}} Uhr</div>
+<div class="section-part section-time" ng-hide="vm.data.times.food">TBA</div>
+<a href="" class="section-part" ng-click="foodDetails=!foodDetails">Essen</a>
+<div class="section-info" ng-show="foodDetails">{{vm.data.food}}</div>

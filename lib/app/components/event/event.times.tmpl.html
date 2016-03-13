@@ -1,6 +1,14 @@
 <div class="section">
-<div class="section-part section-icon">🎉</div>
-<div class="section-part">{{ vm.data.times.showtime | date : 'HH:mm'}} Uhr</div>
-<div class="section-part section-icon">🛬</div>
-<div class="section-part">{{ vm.data.times.getin | date : 'HH:mm'}} Uhr</div>
+  <h2>Ablauf</h2>
+  <div ng-show="vm.data.times.getin">
+    <div class="section-part section-icon">🛬</div>
+    <div class="section-part section-time">{{ vm.data.times.getin | date : 'HH:mm'}} Uhr</div>
+    <div class="section-part">Get-In</div>
+  </div>
+  <event-times-food ng-show="vm.data.food"></event-times-food>
+<div>
+  <div class="section-part section-icon">🎉</div>
+  <div class="section-part section-time">{{ vm.data.times.showtime | date : 'HH:mm'}} Uhr</div>
+  <div class="section-part">Showtime</div>
+</div>
 </div>
