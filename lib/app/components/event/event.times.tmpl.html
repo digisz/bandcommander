@@ -1,8 +1,9 @@
 <div class="section">
   <h2>Ablauf</h2>
-  <event-times-getin ng-show="vm.data.times.getin"></event-times-getin>
-  <event-times-soundcheck ng-show="vm.data.times.soundcheck"></event-times-soundcheck>
-  <event-times-food ng-show="vm.data.food"></event-times-food>
+  <event-times-getin ng-show="vm.data.times.getin"></event-times-getin><br />
+  <event-times-soundcheck ng-show="vm.data.times.setup"></event-times-soundcheck><br />
+    <event-times-doors ng-show="vm.data.times.start"></event-times-doors><br />
+  <event-times-food ng-show="vm.data.food"></event-times-food><br />
 <div>
   <div class="section-part section-icon">🎉</div>
   <div class="section-part section-time">{{ vm.data.times.showtime | date : 'HH:mm'}} Uhr</div>
