@@ -1,8 +1,8 @@
 <div ng-controller="SingleEventController as vm">
   <div class="section section-flex" id="services">
     <button ng-show="isAuthorized(userRoles.admin)" ng-click="editEvent(vm.data._id)">Edit Show</button>
-    <button ng-click="editEvent(vm.data._id)">Gästeliste</button>
-    <button ng-show="vm.data.promoter" ng-click="">{{vm.data.promoter}}</button>
+    <!-- <button ng-click="editEvent(vm.data._id)">Gästeliste</button> -->
+    <button ng-show="vm.data.promoter" ng-click="getPromoter(vm.data.promoter)">{{vm.data.promoter}}</button>
   </div>
 <event-state ng-show="vm.data.state"></event-state>
 <event-heading></event-heading>
