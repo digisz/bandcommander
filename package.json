@@ -9,9 +9,16 @@
   "author": "Pascal Reichmuth, pascal.reichmuth@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cache": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-imagemin": "latest",
     "gulp-livereload": "^3.8.1",
+    "gulp-rename": "latest",
     "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "latest",
     "gulp-uglify": "latest"
   }
 }

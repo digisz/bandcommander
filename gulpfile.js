@@ -47,7 +47,7 @@ gulp.task('html', function () {
 gulp.task('services', function () {
   return gulp.src('./lib/app/services/*.js')
     .pipe(concat('services-master.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./lib/app/'))
     .pipe(connect.reload());
 });
@@ -55,7 +55,7 @@ gulp.task('services', function () {
 gulp.task('controller', function () {
   return gulp.src('./lib/app/**/*controller.js')
     .pipe(concat('controller-master.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./lib/app/'))
     .pipe(connect.reload());
 });
