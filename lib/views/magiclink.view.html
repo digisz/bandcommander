@@ -1,0 +1,13 @@
+<form name="loginForm" ng-controller="MagiclinkController"
+      ng-submit="request(credentials)" novalidate cg-busy="{promise:waiting}">
+      <div class="error" ng-if="wrong">Falscher Username / Password</div>
+  <md-input-container>
+  <input name="username" placeholder="Name" type="text" ng-model="credentials.name"></input>
+  </md-input-container>
+  <md-input-container>
+  <input name="password" placeholder="Passwort" type="password" ng-model="credentials.password"></input>
+  </md-input-container>
+  <br>
+<button type="submit">Login</button>
+</div>
+</form>
