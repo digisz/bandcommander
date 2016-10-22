@@ -36,6 +36,28 @@
   font-size: 0.8em;
   margin-bottom: 15px;
 }
+.section-delete{
+  margin-top:50px;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.section-delete a{
+  font-size: 0.8em;
+  margin-bottom: 15px;
+    text-decoration: none;
+    color:$grey;
+    font-weight: 800;
+}
+
+.section-delete a:hover{
+  margin-left:0px;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+    text-decoration: none;
+    color:$error;
+    font-weight: 800;
+}
 
 .status{
   font-weight: 800;
