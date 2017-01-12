@@ -1,6 +1,7 @@
 <div class="section">
   <h2>Gästeliste</h2>
-  <li ng-repeat="guest in vm.guests" >{{guest.name}} <span ng-if="guest.plus == 0 || guest.plus">+ {{guest.plus}}</span><button class="button-secondary" ng-if="guest.addUser == vm.currentUser || vm.admin" ng-click="removeGuest(guest)">Entfernen</button></li>
+  <li class="guestlist-entry-empty" ng-if="vm.guests<1">Bisher steht noch niemand auf der Gästeliste. 🕶</li>
+  <li class="guestlist-entry" ng-repeat="guest in vm.guests" >{{guest.name}} <span ng-if="guest.plus == 0 || guest.plus">+ {{guest.plus}}</span><button class="button-secondary" ng-if="guest.addUser == vm.currentUser || vm.admin" ng-click="removeGuest(guest)">Entfernen</button></li>
 <button ng-click="showForm=!showForm">Gast hinzufügen</button>
   <form ng-show="showForm">
     <md-input-container>
