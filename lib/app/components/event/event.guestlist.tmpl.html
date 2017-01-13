@@ -2,14 +2,21 @@
   <h2>Gästeliste</h2>
   <li class="guestlist-entry-empty" ng-if="vm.guests<1">Bisher steht noch niemand auf der Gästeliste. 🕶</li>
   <li class="guestlist-entry" ng-repeat="guest in vm.guests" >{{guest.name}} <span ng-if="guest.plus == 0 || guest.plus">+ {{guest.plus}}</span><button class="button-secondary" ng-if="guest.addUser == vm.currentUser || vm.admin" ng-click="removeGuest(guest)">Entfernen</button></li>
-<button ng-click="showForm=!showForm">Gast hinzufügen</button>
+  <button ng-click="showForm=!showForm">Gast hinzufügen</button>
   <form ng-show="showForm">
     <md-input-container>
-    <input name="name" placeholder="Name" type="text" ng-model="vm.newGuest.name"></input>
+      <input name="name" placeholder="Name" type="text" ng-model="vm.newGuest.name"></input>
     </md-input-container>
     <md-input-container>
       <input name="plus" placeholder="Plus" type="number" name="gens" type="number" step="1" min="1" max="10" ng-pattern="/^[0-9]+$/" ng-model="vm.newGuest.plus"></input>
-</md-input-container>
-  <input type="submit" ng-click="addGuest(vm.newGuest)" value="{{vm.newGuest.name}} hinzufügen"></input>
+    </md-input-container>
+    <input type="submit" ng-click="addGuest(vm.newGuest)" value="{{vm.newGuest.name}} hinzufügen"></input>
+  </form>
+  <button ng-click="showEmail=!showEmail">Gästeliste versenden</button>
+  <form ng-show="showEmail">
+    <md-input-container>
+      <input name="email" placeholder="Email" type="text" ng-model="vm.sendEmailTo"></input>
+    </md-input-container>
+    <input type="submit" ng-click="sendGuestlist()" value="versenden"></input>
   </form>
 </div>
