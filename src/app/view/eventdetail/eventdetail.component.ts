@@ -37,7 +37,7 @@ export class EventdetailComponent implements OnInit {
             if (res.links == null) {res.links = {}; };
             if (res.times == null) {res.times = {}; };
             this.show = res;
-            this.titleService.setTitle(this.show.titel);
+            this.titleService.setTitle(this.show.titel+" | Bandcommander");
           },
           err => {
             this.error = true; }

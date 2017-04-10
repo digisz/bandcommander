@@ -10,7 +10,7 @@ import { AuthenticationService } from './../../../services/authentication.servic
   styleUrls: ['./magiclink.component.scss']
 })
 export class MagiclinkComponent implements OnInit {
-  pageName =  'SMS Login' ;
+  pageName =  'SMS Login | Bandcommander' ;
   model: any = {};
   error = "";
   sent = false;

@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     error = '';
-    pageName =  'This is fucking awesome' ;
+    pageName =  'Login | Bandcommander' ;
 
     constructor(
         private router: Router,

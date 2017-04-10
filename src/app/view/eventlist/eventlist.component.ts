@@ -16,7 +16,7 @@ export class EventlistComponent implements OnInit {
   events: Event[];
   error: boolean;
   archive: boolean;
-  pageName =  'Bandcommander Startseite' ;
+  pageName =  'Alle Events | Bandcommander' ;
   constructor(
     private titleService: Title,
     private eventsService: EventsService,
