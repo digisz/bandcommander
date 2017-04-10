@@ -6,6 +6,7 @@ import { EventlistComponent } from '../view/eventlist/eventlist.component';
 import { EventsetupComponent } from '../view/eventsetup/eventsetup.component';
 import { LoginComponent } from '../view/login/login.component';
 import { MagiclinkComponent } from '../view/login/magiclink/magiclink.component';
+import { MagiclinkRedirectComponent } from '../view/login/magiclink/magiclink-redirect/magiclink-redirect.component';
 import { AuthGuard } from '../_guard/auth.guard';
 import { AuthGuardAdmin } from '../_guard/authAdmin.guard';
 
@@ -39,6 +40,9 @@ import { AuthGuardAdmin } from '../_guard/authAdmin.guard';
 }, {
   path: 'magiclink',
   component: MagiclinkComponent
+}, {
+  path: 'magiclink/:user/:token',
+  component: MagiclinkRedirectComponent
 }, {
   path: '**',
   redirectTo: '/'

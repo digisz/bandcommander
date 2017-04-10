@@ -21,6 +21,7 @@ import { LoginComponent } from './view/login/login.component';
 import { MagiclinkComponent } from './view/login/magiclink/magiclink.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 import { EventsetupComponent } from './view/eventsetup/eventsetup.component';
+import { MagiclinkRedirectComponent } from './view/login/magiclink/magiclink-redirect/magiclink-redirect.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EventsetupComponent } from './view/eventsetup/eventsetup.component';
     LoginComponent,
     MagiclinkComponent,
     GuestlistComponent,
-    EventsetupComponent
+    EventsetupComponent,
+    MagiclinkRedirectComponent
     ],
   imports: [
     BrowserModule,
