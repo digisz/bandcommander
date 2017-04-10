@@ -26,12 +26,9 @@ export class MagiclinkRedirectComponent implements OnInit {
   login() {
     this.route.params.forEach((params: Params) => {
       this.model = {
-        name: params['user'],
-        password: params['token'],
-        type:'magiclink'
+        username: params['user'],
+        password: params['token']
       };
-    });
-
       this.authenticationService.login(this.model.username, this.model.password)
           .subscribe(result => {
               if (result === true) {
@@ -42,6 +39,8 @@ export class MagiclinkRedirectComponent implements OnInit {
                   this.error = 'Username or password is incorrect';
               }
           });
+    });
+
   }
 
 }
