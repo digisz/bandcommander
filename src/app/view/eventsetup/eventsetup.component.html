@@ -1,0 +1,22 @@
+<div class="row" *ngIf="show">
+  <div class="col-12">
+    <h1>Neue Show erfassen</h1>
+    <div class="card">
+        <ul class="list-group">
+          <li class="list-group-item"><input [(ngModel)]="show.titel" type="text" placeholder="Titel" /></li>
+          <li class="list-group-item"><input [(ngModel)]="show.date"/></li>
+          <li class="list-group-item"><select [(ngModel)]="show.band">
+            <option value="Möchtegang">Möchtegang</option>
+            <option value="Fratelli-B">Fratelli-B</option>
+            <option value="cmee">C.mEE</option>
+            <option value="phumasoSmack">Phumaso & Smack</option>
+          </select>
+        </li>
+          <li class="list-group-item"><button class="btn btn-primary" (click)="saveEvent()">Erfassen</button></li>
+
+        </ul>
+      </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<section *ngIf="events" >
+<div class="row">
+  <app-event-card *ngFor="let event of events" [event]="event" class="col-12 col-lg-6" [routerLink]="['/event', event._id]"></app-event-card>
+</div>
+</section>
+<a routerLink="/event/new" >Neue Show</a>
+<a routerLink="/archiv" [hidden]=this.archive>Vergangene Shows anzeigen</a>
+<a routerLink="/" [hidden]=!this.archive>Aktuelle Shows anzeigen</a>

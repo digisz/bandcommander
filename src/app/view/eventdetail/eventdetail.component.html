@@ -1,0 +1,51 @@
+<div class="status" *ngIf="!show?.public">noch nicht kommunizieren</div>
+<div class="row" *ngIf="show">
+  <div class="col-12 text-center titel-area">
+    <h1 class="showTitel text-center"><span *ngIf="!edit_titel">{{show.titel}}</span><input *ngIf="edit_titel" type="text" [(ngModel)]="show.titel" (blur)="saveEditable()" placeholder="Titel"/></h1>
+    <h2 class="text-muted text-center"><span *ngIf="!edit_titel">{{show.date | date : 'dd. MMMM yyyy'}}</span><input type="date" *ngIf="edit_titel" [(ngModel)]="show.date" (blur)='saveEditable()'/></h2>
+    <span class="edit" *ngIf="admin && !edit_titel" (click)="editTitel()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_titel" (click)="editTitel()">Schliessen</span>
+  </div>
+  <section class="col-12 col-md-6">
+    <h3 class="h3">Ablauf<span class="edit" *ngIf="admin && !edit_times" (click)="editTimes()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_times" (click)="editTimes()">Schliessen</span>
+    </h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngIf="show?.times?.getin || edit_times"><img src="../../../assets/icons/getin.png" class="icon-50" /><span *ngIf="!edit_times">{{show?.times?.getin}}</span><input *ngIf="edit_times" type="time" [(ngModel)]="show.times.getin" (blur)="saveEditable()"/>&nbsp;Uhr</li>
+      <li class="list-group-item" *ngIf="show?.times?.setup || edit_times"><img src="../../../assets/icons/soundcheck.png" class="icon-50" /><span *ngIf="!edit_times">{{show?.times?.setup}}</span><input *ngIf="edit_times" type="time" [(ngModel)]="show.times.setup" (blur)="saveEditable()"/>&nbsp;Uhr</li>
+      <li class="list-group-item" *ngIf="show?.times?.food || edit_times"><img src="../../../assets/icons/food.png" class="icon-50" /><span *ngIf="!edit_times">{{show?.times?.food}}</span><input *ngIf="edit_times" type="time" [(ngModel)]="show.times.food" (blur)="saveEditable()"/>&nbsp;Uhr</li>
+      <li class="list-group-item" *ngIf="show?.times?.start || edit_times"><img src="../../../assets/icons/doors.png" class="icon-50" /><span *ngIf="!edit_times">{{show?.times?.start}}</span><input *ngIf="edit_times" type="time" [(ngModel)]="show.times.start" (blur)="saveEditable()"/>&nbsp;Uhr</li>
+      <li class="list-group-item" *ngIf="show?.times?.showtime || edit_times"><img src="../../../assets/icons/show.png" class="icon-50" /><span *ngIf="!edit_times">{{show?.times?.showtime}}</span><input *ngIf="edit_times" type="time" [(ngModel)]="show.times.showtime" (blur)="saveEditable()"/>&nbsp;Uhr</li>
+      <li class="list-group-item" *ngIf="show?.comment || edit_times"><img src="../../../assets/icons/internal.png" class="icon-50" /><div><h5 class="h5">Vertrauliche Info</h5><span *ngIf="!edit_times">{{show?.comment}}</span><textarea *ngIf="edit_times" [(ngModel)]="show.comment" (blur)="saveEditable()"></textarea></div></li>
+    </ul>
+    <h3 class="h3">Adresse<span class="edit" *ngIf="admin && !edit_address" (click)="editAddress()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_address" (click)="editAddress()">Schliessen</span></h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngIf="!edit_address"><img src="../../../assets/icons/place.png" class="icon-50" /><div>{{show?.location}} - {{show?.place}}<br/><a target="_blank" href="https://www.google.com/maps?q={{show.location}}+{{show.plz}}+{{show.place}}" class="maps" >in Google Maps öffnen</a></div></li>
+      <li class="list-group-item" *ngIf="edit_address"><img src="../../../assets/icons/location.png" class="icon-50" /><input type="text" [(ngModel)]="show.location" (blur)="saveEditable()" placeholder="Lokalität"/></li>
+      <li class="list-group-item" *ngIf="edit_address"><img src="../../../assets/icons/address.png" class="icon-50" /><input type="text" [(ngModel)]="show.address" (blur)="saveEditable()" placeholder="Strasse"/></li>
+      <li class="list-group-item" *ngIf="edit_address"><img src="../../../assets/icons/place.png" class="icon-50" /><input type="text" [(ngModel)]="show.plz" (blur)="saveEditable()" placeholder="PLZ" size="2"/><input type="text" [(ngModel)]="show.place" (blur)="saveEditable()" placeholder="Ort"/></li>
+    </ul>
+  </section>
+  <section class="col-12 col-md-6">
+    <h3 class="h3">Detail<span class="edit" *ngIf="admin && !edit_detail" (click)="editDetail()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_detail" (click)="editDetail()">Schliessen</span></h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngIf="show?.band || edit_detail"><img src="../../../assets/icons/band.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.band}}</span><select [(ngModel)]="show.band" *ngIf="edit_detail" (blur)="saveEditable()"><option value="Möchtegang">Möchtegang</option><option value="Fratelli-B">Fratelli-B</option><option value="cmee">C.mEE</option><option value="phumasoSmack">Phumaso & Smack</option></select></li>
+      <li class="list-group-item" *ngIf="show?.promoter || edit_detail"><img src="../../../assets/icons/promoter.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.promoter}}</span><input *ngIf="edit_detail" type="time" [(ngModel)]="show.promoter" (blur)="saveEditable()" placeholder="Promoter"/></li>
+      <li class="list-group-item" *ngIf="show?.travelparty|| edit_detail"><img src="../../../assets/icons/travelparty.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.travelparty}}</span><input *ngIf="edit_detail" type="number" [(ngModel)]="show.travelparty" (blur)="saveEditable()" placeholder="Travelparty"/>&nbsp;Personen im Vertrag</li>
+      <li class="list-group-item" *ngIf="show?.duration|| edit_detail"><img src="../../../assets/icons/duration.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.duration}}</span><input *ngIf="edit_detail" type="time" [(ngModel)]="show.duration" (blur)="saveEditable()" placeholder="Show-Dauer"/>&nbsp;min</li>
+      <li class="list-group-item" *ngIf="show?.age|| edit_detail"><img src="../../../assets/icons/age.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.age}}</span><input *ngIf="edit_detail" type="text" [(ngModel)]="show.age" (blur)="saveEditable()" placeholder="Mind. Alter"/></li>
+      <li class="list-group-item" *ngIf="show?.food|| edit_detail"><img src="../../../assets/icons/food.png" class="icon-50" /><span *ngIf="!edit_detail">{{show.food}}</span><input *ngIf="edit_detail" type="text" [(ngModel)]="show.food" (blur)="saveEditable()" placeholder="Infos zum Essen"/></li>
+      <li class="list-group-item" *ngIf="show?.publicnotes|| edit_detail"><img src="../../../assets/icons/information.png" class="icon-50" /><span *ngIf="!edit_detail">{{show?.publicnotes}}</span><textarea *ngIf="edit_detail" [(ngModel)]="show.publicnotes" (blur)="saveEditable()" placeholder="Öffentliche Infos"></textarea></li>
+      <li class="list-group-item" *ngIf="show?.links?.facebook || edit_detail"><img src="../../../assets/icons/facebook.png" class="icon-50" /><span class="clipboard link" *ngIf="show?.links?.facebook && !edit_detail" [attr.data-clipboard-text]='show.links.facebook'>Facebook Link kopieren</span><input *ngIf="edit_detail" type="text" [(ngModel)]="show.links.facebook" (blur)="saveEditable()" placeholder="Facebook Link"/></li>
+      <li class="list-group-item" *ngIf="show?.links?.tickets || edit_detail"><img src="../../../assets/icons/ticket.png" class="icon-50" /><span class="clipboard link" *ngIf="show?.links?.tickets && !edit_detail" [attr.data-clipboard-text]="show.links.tickets">Ticket Link kopieren</span><input *ngIf="edit_detail" type="text" [(ngModel)]="show.links.tickets" (blur)="saveEditable()" placeholder="Ticket Link"/></li>
+    </ul>
+  </section>
+  <app-guestlist [event]="show" class="col-12 guestlist"></app-guestlist>
+  <section class="col-12 bandleader" *ngIf="admin">
+    <h3 class="h3">Bandleader<span class="edit" *ngIf="admin && !edit_bandleader" (click)="editBandleader()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_bandleader" (click)="editBandleader()">Schliessen</span></h3>
+    <ul class="list-group">
+      <li class="list-group-item"><img src="../../../assets/icons/fee.png" class="icon-50" />CHF&nbsp;<span *ngIf="!edit_bandleader">{{show.fee}}</span><input *ngIf="edit_bandleader" type="text" [(ngModel)]="show.fee" (blur)="saveEditable()" placeholder="Gage"/></li>
+      <li class="list-group-item"><img src="../../../assets/icons/published.png" class="icon-50" /><label class="switch"><input type="checkbox" [(ngModel)]="show.published" (change)="saveEditable()"><div class="slider round"></div></label></li>
+      <li class="list-group-item" *ngIf="show.published"><img src="../../../assets/icons/public.png" class="icon-50" /><label class="switch"><input type="checkbox" [(ngModel)]="show.public" (change)="saveEditable()"><div class="slider round"></div></label></li>
+      <li class="list-group-item"><button class="btn btn-danger" (click)="deleteEvent()">Event Löschen</button></li>
+    </ul>
+  </section>
+</div>

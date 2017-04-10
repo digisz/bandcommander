@@ -1,0 +1,36 @@
+  <div class="card">
+  <div class="row">
+
+  <div class="col-3">
+    <div class="datum">
+    <div class="wochentag">{{event.date | date : 'EEEE'}}</div>
+    <div class="tag">{{event.date | date : 'dd'}}</div>
+    <div class="monat">{{event.date | date : 'MMMM'}}</div>
+
+  </div>
+  </div>
+  <div class="col-9 information">
+    <h1 *ngIf="event.type == 'concert' || event.type == null">🎤 {{event.titel}}</h1>
+    <h1 *ngIf="event.type == 'tv'">📺 {{event.titel}}</h1>
+    <h1 *ngIf="event.type == 'radio'">📻 {{event.titel}}</h1>
+    <h1 *ngIf="event.type == 'other'">❓ {{event.titel}}</h1>
+    <h1 *ngIf="event.type == 'probe'">🎯 {{event.titel}}</h1>
+
+    <div class="showAddInfo">
+    <div class="showAddInfoLine">{{event.location}}, {{event.place}}</div>
+     <div class="showAddInfoLine showAddInfoLineBand">{{event.band}}</div>
+    </div>
+  </div>
+    </div>
+    <div class="row" *ngIf=isToday(event.date)>
+      <div class="col-9 offset-3">
+        <div class="row">
+          <div class="col-4 col-md-3 todayTimes" *ngIf="event?.times?.getin">🛬 {{event?.times?.getin}}</div>
+          <div class="col-4 col-md-3 todayTimes" *ngIf="event?.times?.setup">🔌 {{event?.times?.setup}}</div>
+          <div class="col-4 col-md-3 todayTimes" *ngIf="event?.times?.start">🚪 {{event?.times?.start}}</div>
+          <div class="col-4 col-md-3 todayTimes" *ngIf="event?.times?.showtime">🎉 {{event?.times?.showtime}}</div>
+        </div>
+      </div>
+
+    </div>
+</div>

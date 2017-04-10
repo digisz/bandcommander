@@ -1,0 +1,58 @@
+@import "../../../assets/scss/colors";
+
+h1{
+  margin: 30px 0 5px 0;
+  font-size:3em;
+  text-transform: uppercase;
+  font-weight:600;
+  color:$master;
+}
+
+.link{
+  color:$primary;
+  cursor: pointer;
+}
+.link:hover{
+  color:$primary-strong;
+}
+
+.maps,.edit{
+  color:$primary;
+  font-size:12px;
+  cursor: pointer;
+  text-transform: none;
+}
+.maps:hover,.edit:hover{
+color: $primary-strong;
+}
+.edit{
+  margin-left: 10px;
+}
+.status{
+  background-color: #D83A5E;
+  color:white;
+  font-weight: 800;
+  text-align: center;
+  width:110%;
+  text-transform: uppercase;
+  line-height: 24px;
+  box-shadow: 0px 2px 2px 1px rgba(black,0.3);
+  position: sticky;
+  top:0;
+  z-index:999;
+  margin-left:-5%;
+  margin-right:-5%;
+  transition: all 2s;
+}
+
+.guestlist{
+  background: $master;
+  color:white;
+  padding-bottom: 15px;
+}
+
+.bandleader{
+  border: 1px solid $red;
+  margin-top:15px;
+  margin-bottom: 45px;
+}
