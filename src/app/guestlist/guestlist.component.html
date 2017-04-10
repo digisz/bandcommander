@@ -1,0 +1,26 @@
+<h3 class="h3">Gästeliste</h3>
+<ul class="list-group">
+  <li class="list-group-item" *ngIf="!guestlist?.length">Bisher steht noch niemand auf der Gästeliste. 🕶</li>
+  <li class="list-group-item no-gutters" *ngFor="let guest of guestlist"><span class="col-8 text-left">{{guest.name}}<span *ngIf="guest?.plus"> +{{guest.plus}}</span></span><span class="col-4 text-right"><button class="btn btn-secondary" *ngIf="guest.addUser == currentUser.name || currentUser.role == 'admin'" (click)="deleteGuest(guest)">Entfernen</button></span></li>
+  <li class="list-group-item">
+    <form (ngSubmit)="addGuest()" class="no-gutters">
+      <span class="col-8"><input name="name" placeholder="Name" type="text" [(ngModel)]="newGuest.name">
+        <input [(ngModel)]="newGuest.plus" name="plus" placeholder="Plus" type="number" name="gens" type="number" step="1" min="1" max="10" pattern="/^[0-9]+$/" >
+    </span>
+    <span class="col-4 text-right"><input type="submit" class="btn btn-primary" value="Gast hinzufügen"></span>
+    </form>
+    </li>
+    <li class="list-group-item">
+      <div class="col-12" *ngIf="emailField && !messageSent">
+        <form (ngSubmit)="sendGuestlist()">
+            <input [(ngModel)]="sendguestlist.email" name="email" placeholder="Email" type="text">
+          <input class="btn btn-secondary"  type="submit" value="versenden">
+        </form>
+      </div>
+        <div *ngIf="messageSent" class="col-12 col-md-6">
+          <iframe src="http://giphy.com/embed/3oEdv9OpWdiMIcCnYc" width="480" height="296.90721649484533" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p>Unterwegs zu {{messageSentTo}}</p>
+        </div>
+    </li>
+    <button class="btn btn-secondary" (click)="showEmail()" *ngIf="guestlist?.length">Gästeliste versenden</button>
+</ul>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bandcommander</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  <style>.trnt_arm,.trnt_vinyl{animation-iteration-count:infinite;animation-timing-function:linear}#trnt{position:relative;margin-left:auto;margin-right:auto;width:100px;text-align:center}.trnt_turntable{position:relative;width:78px;margin:auto}.trnt_arm,.trnt_cover,.trnt_floor,.trnt_hole,.trnt_middle,.trnt_wheel{position:absolute}.trnt_floor{top:4px;left:5px;height:50px;width:70px;border:1px solid #3b3b3b;background:#fff}.trnt_hole,.trnt_vinyl{background-color:#141414}.trnt_vinyl{border-radius:30px;height:60px;width:60px;animation-name:trnt_spin;animation-duration:2s}.trnt_wheel{border-radius:50px;border:1px solid #636363}.trnt_wheel-1{left:4px;top:4px;height:50px;width:50px}.trnt_wheel-2{left:7px;top:7px;height:44px;width:44px}.trnt_wheel-3{left:10px;top:10px;height:38px;width:38px}.trnt_hole{top:29px;left:29px;border-radius:5px;height:2px;width:2px;z-index:999}.trnt_middle{z-index:99;left:23px;top:23px;height:14px;width:14px;border-radius:50px;background:#fff}.trnt_cover{height:57px;width:26px;background-color:#141414;top:2px;border-radius:10px;z-index:9;left:16px}.trnt_arm{height:35px;width:0;top:10px;z-index:999;left:68px;opacity:1;border:1px solid #fff;box-shadow:1px 0 0 1px rgba(50,50,50,.1);border-radius:3px;animation-name:trnt_arm-move;animation-duration:10s;transform-origin:top}.trnt_text{font-size:1em}@keyframes trnt_spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes trnt_arm-move{0%,100%{transform:rotate(20deg)}80%,90%{transform:rotate(40deg)}}</style>
+</head>
+<body>
+  <app-root>
+    <div id="trnt">
+      <div class="trnt_turntable">
+        <div class="trnt_floor"></div>
+        <div class="trnt_arm"></div>
+        <div class="trnt_vinyl">
+          <div class="trnt_wheel trnt_wheel-1"></div>
+          <div class="trnt_wheel trnt_wheel-2"></div>
+          <div class="trnt_wheel trnt_wheel-3"></div>
+          <div class="trnt_cover"></div>
+          <div class="trnt_middle"></div>
+          <div class="trnt_hole"></div>
+        </div>
+      </div>
+      <span class="trnt_text">getting funky...</span>
+    </div>
+
+  </div>
+</app-root>
+  <script src="assets/js/vendor/clipboard.min.js"></script>
+
+  <script>var clipboard = new Clipboard('.clipboard');
+  clipboard.on('success', function(e) {
+    alert('Link kopiert');
+  });</script>
+</body>
+</html>

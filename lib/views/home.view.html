@@ -1,5 +1,0 @@
-<div ng-controller="HomeController as homeCtrl">
-  <li ng-repeat="event in homeCtrl.events" class="singleEventSmall" ng-click="showEvent(event._id)"><single-show-small></single-show-small></li>
-<button ng-show="isAuthorized(userRoles.admin)" ng-click="showEvent('new')" id="home-add-show">Add new Show</button>
-<a href="#/archive" ng-show="{{homeCtrl.paramValue=='current'}}">Vergangene Shows anzeigen</a><a ng-show="{{homeCtrl.paramValue!='current'}}" href="/#/">Aktuelle Shows anzeigen</a>
-</div>

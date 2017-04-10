@@ -1,0 +1,13 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "colors";
+@import "global";
+@import "input";
+@import "turntable";
+
+.card-header{
+  background-color: transparentize($primary, 0.9);
+  color:$primary;
+  border:none;
+  font-weight: 800;
+
+}
