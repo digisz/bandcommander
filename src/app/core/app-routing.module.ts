@@ -43,6 +43,9 @@ import { AuthGuardAdmin } from '../_guard/authAdmin.guard';
 }, {
   path: 'magiclink/:user/:token',
   component: MagiclinkRedirectComponent
+},{
+  path: 'magiclink/#/:user/:token',
+  component: MagiclinkRedirectComponent
 }, {
   path: '**',
   redirectTo: '/'
