@@ -45,6 +45,10 @@ export class EventdetailComponent implements OnInit {
 
         });
       }
+      saveDate($event){
+        this.show.date = $event.target.value
+        this.saveEditable();
+      }
 
       saveEditable() {
         console.log(this.show);
