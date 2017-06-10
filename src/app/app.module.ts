@@ -12,6 +12,7 @@ import { GuestlistService } from './services/guestlist.service';
 import { AuthGuard } from './_guard/auth.guard';
 import { AuthGuardAdmin } from './_guard/authAdmin.guard';
 import { AuthenticationService} from './services/authentication.service';
+import { DocumentService} from './services/document.service';
 
 import { AppRoutingModule } from './core/app-routing.module';
 import { EventlistComponent } from './view/eventlist/eventlist.component';
@@ -22,6 +23,7 @@ import { MagiclinkComponent } from './view/login/magiclink/magiclink.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 import { EventsetupComponent } from './view/eventsetup/eventsetup.component';
 import { MagiclinkRedirectComponent } from './view/login/magiclink/magiclink-redirect/magiclink-redirect.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { MagiclinkRedirectComponent } from './view/login/magiclink/magiclink-red
     MagiclinkComponent,
     GuestlistComponent,
     EventsetupComponent,
-    MagiclinkRedirectComponent
+    MagiclinkRedirectComponent,
+    DocumentsComponent
     ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { MagiclinkRedirectComponent } from './view/login/magiclink/magiclink-red
     AuthenticationService,
     Title,
     EventsService,
-    GuestlistService
+    GuestlistService,
+    DocumentService
   ],
   bootstrap: [AppComponent]
 })
