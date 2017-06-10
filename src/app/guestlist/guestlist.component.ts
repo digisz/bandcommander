@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Event } from '../models/event.model';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { GuestlistService } from '../services/guestlist.service';
@@ -21,7 +20,6 @@ export class GuestlistComponent implements OnInit {
   currentUser = {name: localStorage.getItem('username'), role: localStorage.getItem('role')};
   newGuest = {name: '', plus: '', addUser: this.currentUser.name, eventID: ''};
   sendguestlist = { eventID: '', email: '', guests: {}};
-  @Input() event: Event;
 
   constructor(
     private guestlistService: GuestlistService,
