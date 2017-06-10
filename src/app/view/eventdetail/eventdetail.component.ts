@@ -5,6 +5,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { EventsService } from '../../services/events.service';
 import { Eventdetail } from '../../models/event-detail.model';
 import { GuestlistComponent } from '../../guestlist/guestlist.component';
+import { DocumentsComponent } from '../../documents/documents.component';
 
 @Component({
   selector: 'app-eventdetail',

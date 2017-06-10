@@ -46,7 +46,8 @@
             [(ngModel)]="show.links.tickets" (blur)="saveEditable()" placeholder="Ticket Link" /></li>
     </ul>
   </section>
-  <app-guestlist [event]="show" class="col-12 guestlist"></app-guestlist>
+  <app-documents class="col-12"></app-documents>
+  <app-guestlist class="col-12 guestlist"></app-guestlist>
   <section class="col-12 bandleader" *ngIf="admin">
     <h3 class="h3">Bandleader<span class="edit" *ngIf="admin && !edit_bandleader" (click)="editBandleader()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_bandleader" (click)="editBandleader()">Schliessen</span></h3>
     <ul class="list-group">
