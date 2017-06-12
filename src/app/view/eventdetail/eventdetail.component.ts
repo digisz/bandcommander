@@ -28,6 +28,17 @@ export class EventdetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
 
+    addDocumentEvent($event){
+      this.show.documents.push($event);
+      this.show.documents = this.show.documents.filter((set => f => !set.has(f.key) && set.add(f.key))(new Set));
+      this.saveEditable();
+      }
+
+    removeDocumentEvent($event){
+      this.show.documents = this.show.documents.filter(function(el){return el.key !== $event.key;});
+      this.saveEditable();
+      }
+
     getEvent() {
       this.route.params.forEach((params: Params) => {
         const event_id = params['id'];
@@ -52,12 +63,10 @@ export class EventdetailComponent implements OnInit {
       }
 
       saveEditable() {
-        console.log(this.show);
         this.eventService
         .saveEvent$(this.show)
         .subscribe(
           res => {
-            console.log(res);
           },
           err => {
             this.error = true; }

@@ -45,8 +45,8 @@
       <li class="list-group-item" *ngIf="show?.links?.tickets || edit_detail"><img src="../../../assets/icons/ticket.png" class="icon-50" /><span class="clipboard link" *ngIf="show?.links?.tickets && !edit_detail" [attr.data-clipboard-text]="show.links.tickets">Ticket Link kopieren</span><input *ngIf="edit_detail" type="text"
             [(ngModel)]="show.links.tickets" (blur)="saveEditable()" placeholder="Ticket Link" /></li>
     </ul>
+    <app-documents [show]="show" (addDocumentEvent)="addDocumentEvent($event)" (removeDocumentEvent)="removeDocumentEvent($event)"></app-documents>
   </section>
-  <app-documents class="col-12"></app-documents>
   <app-guestlist class="col-12 guestlist"></app-guestlist>
   <section class="col-12 bandleader" *ngIf="admin">
     <h3 class="h3">Bandleader<span class="edit" *ngIf="admin && !edit_bandleader" (click)="editBandleader()">Bearbeiten</span><span class="edit" *ngIf="admin && edit_bandleader" (click)="editBandleader()">Schliessen</span></h3>
