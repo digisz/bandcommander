@@ -3,8 +3,6 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { environment } from './../../environments/environment';
 
-import { Document } from './../models/document.model';
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -17,7 +15,6 @@ export class DocumentService {
     private http: Http) { }
 
     addDocument$(document: any): Observable<any> {
-      console.log(document);
       let headers = new Headers({ 'x-access-token': this.token });
       headers.append('enctype', 'multipart/form-data');
       headers.append('Accept', 'application/json');
@@ -28,6 +25,16 @@ export class DocumentService {
       .map(this.handleSuccess)
       .catch(this.handleError);
     }
+
+    removeDocument$(document: any): Observable<any> {
+      let headers = new Headers({ 'x-access-token': this.token });
+      const options = new RequestOptions({ headers: headers });
+      return this.http
+      .delete(this.baseUrl + 'document/'+ encodeURIComponent(document.key)+"/" , options)
+      .map(this.handleSuccess)
+      .catch(this.handleError);
+    }
+
 
     private handleSuccess(res: Response) {
     return res.json(); }

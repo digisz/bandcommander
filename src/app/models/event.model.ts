@@ -6,6 +6,6 @@ export class Event { constructor(
   public showtime: string,
   public band: string,
   public type: string,
-  public date: string
+  public date: string,
 ) {}
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, ViewChild } from '@angular/core';
 import { Event } from '../models/event.model';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -11,20 +11,31 @@ import { Document } from '../models/document.model';
   styleUrls: ['./documents.component.scss']
 })
 export class DocumentsComponent implements OnInit {
-  newDocument = {'key':"",'path':"",  'name':"",'location':""};
   error: boolean;
+  admin = (localStorage.getItem('role') === 'admin');
+  @Input() show;
+  @Output() addDocumentEvent = new EventEmitter();
+  @Output() removeDocumentEvent = new EventEmitter();
+  @ViewChild('documentUploadForm') fileForm: any;
 
   constructor(
     private documentService: DocumentService,
     private route: ActivatedRoute
-  ) { }
+    ) { }
 
   ngOnInit() {
-    // TODO
-    /*
-    1. load all files for this event
-    2. init with document name
-    */
+  }
+
+  removeDocument(document){
+    this.documentService
+    .removeDocument$(document)
+    .subscribe(
+      res => {
+        this.removeDocumentEvent.emit(document);
+      },
+      err => {
+        this.error = true; }
+      );
   }
 
   addDocument(event) {
@@ -39,8 +50,8 @@ export class DocumentsComponent implements OnInit {
         .addDocument$(formData)
         .subscribe(
           res => {
-            console.log(res);
-            //TODO post document path and name to event (after the file url has been returned)
+            this.addDocumentEvent.emit(res);
+            this.fileForm.nativeElement.value = "";
           },
           err => {
             this.error = true; }
