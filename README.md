@@ -1,4 +1,6 @@
 [![codebeat badge](https://codebeat.co/badges/4777cf28-67fa-4926-aa4b-a390f67d44bd)](https://codebeat.co/projects/github-com-digisz-bandcommanderfrontend-master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/digisz/bandcommanderFrontend.svg)](https://gemnasium.com/github.com/digisz/bandcommanderFrontend)
+
 
 # Client
 
