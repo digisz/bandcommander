@@ -14,49 +14,41 @@ import { AuthenticationService } from '../services/authentication.service';
 @Injectable()
 export class EventsService {
 private baseUrl =  environment.API_URL;
-
+private headers = new Headers({ 'x-access-token': this.authenticationService.token });
+private options = new RequestOptions({ headers: this.headers });
 
 constructor(
   private http: Http,
   private authenticationService: AuthenticationService) { }
 
-
 getAllEvents$(archive: boolean): Observable<Event[]> {
-  const headers = new Headers({ 'x-access-token': this.authenticationService.token });
-  const options = new RequestOptions({ headers: headers });
   let archiveOption = '';
   if (archive) {
     archiveOption = '/archive/';
   }
   return this.http
-  .get(this.baseUrl + 'events' + archiveOption, options)
+  .get(this.baseUrl + 'events' + archiveOption, this.options)
   .map(this.handleSuccess)
   .catch(this.handleError);
 }
 
 getEvent$(id: string): Observable<Eventdetail> {
-const headers = new Headers({ 'x-access-token': this.authenticationService.token });
-const options = new RequestOptions({ headers: headers });
 return this.http
-.get(this.baseUrl + 'event/' + id, options)
+.get(this.baseUrl + 'event/' + id, this.options)
 .map(this.handleSuccess)
 .catch(this.handleError);
 }
 
 deleteEvent$(id: string): Observable<any> {
-const headers = new Headers({ 'x-access-token': this.authenticationService.token });
-const options = new RequestOptions({ headers: headers });
 return this.http
-.delete(this.baseUrl + 'event/' + id, options)
+.delete(this.baseUrl + 'event/' + id, this.options)
 .map(this.handleSuccess)
 .catch(this.handleError);
 }
 
 saveEvent$(event: Eventdetail): Observable<any> {
-const headers = new Headers({ 'x-access-token': this.authenticationService.token });
-const options = new RequestOptions({ headers: headers });
 return this.http
-.post(this.baseUrl + 'event/' + event._id, event, options)
+.post(this.baseUrl + 'event/' + event._id, event, this.options)
 .map(this.handleSuccess)
 .catch(this.handleError);
 }

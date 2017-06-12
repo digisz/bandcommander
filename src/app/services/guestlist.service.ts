@@ -12,43 +12,37 @@ import 'rxjs/add/operator/catch';
 export class GuestlistService {
 private baseUrl =  environment.API_URL;
 private token = localStorage.getItem('token');
+private headers = new Headers({ 'x-access-token': this.token });
+private options = new RequestOptions({ headers: this.headers });
 
 constructor(
   private http: Http) { }
 
 
 getGuestlist$(id: string): Observable<Guestlistguest[]> {
-  const headers = new Headers({ 'x-access-token': this.token });
-  const options = new RequestOptions({ headers: headers });
   return this.http
-  .get(this.baseUrl + 'guestlist/' +  id, options)
+  .get(this.baseUrl + 'guestlist/' +  id, this.options)
   .map(this.handleSuccess)
   .catch(this.handleError);
 }
 
 addGuest$(guest: any): Observable<any> {
-  const headers = new Headers({ 'x-access-token': this.token });
-  const options = new RequestOptions({ headers: headers });
   return this.http
-  .post(this.baseUrl + 'guestlist/' + guest.eventID, guest , options)
+  .post(this.baseUrl + 'guestlist/' + guest.eventID, guest , this.options)
   .map(this.handleSuccess)
   .catch(this.handleError);
 }
 
 deleteGuest$(guestid: string): Observable<Guestlistguest[]> {
-  const headers = new Headers({ 'x-access-token': this.token });
-  const options = new RequestOptions({ headers: headers });
   return this.http
-  .delete(this.baseUrl + 'guestlist/' +  guestid, options)
+  .delete(this.baseUrl + 'guestlist/' +  guestid, this.options)
   .map(this.handleSuccess)
   .catch(this.handleError);
 }
 
 sendGuestlist$(data: any): Observable<any> {
-  const headers = new Headers({ 'x-access-token': this.token });
-  const options = new RequestOptions({ headers: headers });
   return this.http
-  .post(this.baseUrl + 'mail/guestlist/' +  data.eventID, data, options)
+  .post(this.baseUrl + 'mail/guestlist/' +  data.eventID, data, this.options)
   .map(this.handleSuccess)
   .catch(this.handleError);
 }

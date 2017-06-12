@@ -10,31 +10,28 @@ import 'rxjs/add/operator/catch';
 export class DocumentService {
   private baseUrl =  environment.API_URL;
   private token = localStorage.getItem('token');
+  private headers = new Headers({ 'x-access-token': this.token });
+  private options = new RequestOptions({ headers: this.headers });
 
   constructor(
     private http: Http) { }
 
     addDocument$(document: any): Observable<any> {
-      let headers = new Headers({ 'x-access-token': this.token });
-      headers.append('enctype', 'multipart/form-data');
-      headers.append('Accept', 'application/json');
-
-      const options = new RequestOptions({ headers: headers });
+      this.headers.append('enctype', 'multipart/form-data');
+      this.headers.append('Accept', 'application/json');
+      const options = new RequestOptions({ headers: this.headers });
       return this.http
-      .post(this.baseUrl + 'document/', document , options)
+      .post(this.baseUrl + 'document/', document , this.options)
       .map(this.handleSuccess)
       .catch(this.handleError);
     }
 
     removeDocument$(document: any): Observable<any> {
-      let headers = new Headers({ 'x-access-token': this.token });
-      const options = new RequestOptions({ headers: headers });
       return this.http
-      .delete(this.baseUrl + 'document/'+ encodeURIComponent(document.key)+"/" , options)
+      .delete(this.baseUrl + 'document/'+ encodeURIComponent(document.key)+"/" , this.options)
       .map(this.handleSuccess)
       .catch(this.handleError);
     }
-
 
     private handleSuccess(res: Response) {
     return res.json(); }
