@@ -3,7 +3,6 @@ import { Event } from '../models/event.model';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { DocumentService } from '../services/document.service';
-import { Document } from '../models/document.model';
 
 @Component({
   selector: 'app-documents',
