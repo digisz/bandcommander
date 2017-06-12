@@ -2,5 +2,7 @@
 <ul class="list-group">
   <li class="list-group-item" *ngIf="!show.documents?.length">Keine Dokumente für diese Show vorhanden.</li>
   <li class="list-group-item no-gutters" *ngFor="let document of show.documents"><a href="{{document.Location}}" class="col-8 text-left">{{document.key | slice:25}}</a><span class="col-4 text-right" *ngIf=admin><button class="btn btn-secondary" (click)="removeDocument(document)">Entfernen</button></span></li>
+  <li class="list-group-item no-gutters">
+    <input *ngIf=admin type="file" #documentUploadForm (change)="addDocument($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.jpg,.png">
+  </li>
 </ul>
-<input *ngIf=admin type="file" #documentUploadForm (change)="addDocument($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.jpg,.png">
