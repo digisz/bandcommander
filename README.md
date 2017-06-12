@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/4777cf28-67fa-4926-aa4b-a390f67d44bd)](https://codebeat.co/projects/github-com-digisz-bandcommanderfrontend-master)
+
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.2.
